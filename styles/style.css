@@ -80,11 +80,14 @@ footer {
     box-shadow: var(--shadow);
 }
     
-
+.character {
+    margin-top: 2rem;
+}
 #goblin-column {
     display: flex;
     flex-direction: column;
     align-content: flex-end;
+    margin-top: 2rem;
 }
 .goblin-div img {
     width: 6rem;
