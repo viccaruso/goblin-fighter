@@ -31,8 +31,6 @@ body {
     background-color: var(--color2);
 }
 
-
-
 header {
     display: flex;
     justify-content: flex-end;
@@ -40,7 +38,6 @@ header {
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
-
 
 h2 {
     font-size: 1.8rem;
@@ -80,6 +77,13 @@ main {
     background-repeat: no-repeat;
 }
 
+#top-row {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em 2em 0 2em;
+    color: white;
+}
 #middle-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -105,3 +109,6 @@ main {
     
 }
 
+#top-row p {
+    display: inline;
+}
