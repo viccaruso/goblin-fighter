@@ -31,17 +31,7 @@ body {
     background-color: var(--color2);
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: calc(var(--footer-height));
-    background-image: url('../assets/background.jpeg');
-    background-size: cover;
-    height: 90%;
-    width: auto;
-    background-repeat: no-repeat;
-}
+
 
 header {
     display: flex;
@@ -79,17 +69,39 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-    
-.character {
-    margin-top: 2rem;
+
+main {
+    display: grid;
+    grid-template-rows: 200px 5fr 2fr;
+    background-image: url('../assets/background.jpeg');
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    background-repeat: no-repeat;
 }
-#goblin-column {
+
+#middle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#character-div {
     display: flex;
     flex-direction: column;
-    align-content: flex-end;
-    margin-top: 2rem;
+    justify-self: center;
+    align-self: center;
+    
+    background-color: white;
 }
-.goblin-div img {
-    width: 6rem;
-    height: 6rem;
+
+#monsters-div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    height: 70%;
+    width: 60%;
+    background-color: white;
+    
 }
+
