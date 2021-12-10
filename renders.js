@@ -13,6 +13,7 @@ export function renderGoblin(goblin) {
 
     // Add class to container
     container.classList.add('goblin');
+    goblinEmoji.classList.add('goblin-face');
 
     // Append elements to put inside container
     container.append(name, goblinEmoji, hp);
