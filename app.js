@@ -8,6 +8,7 @@ const form = document.querySelector('form');
 
 // let state
 let charHP = 10;
+let killCount = 0;
 const goblinList = [
     {
         name: 'Hoblin',
@@ -60,6 +61,7 @@ function displayGoblins() {
         // Make goblin element clickable if it is still alive
         if (goblin.hp > 0) {
             goblinEl.addEventListener('click', () => {
+                // Player hit attempt
                 // If hit was successful decrement goblin hp
                 if (Math.random() > .45) {
                     goblin.hp--;
@@ -67,13 +69,32 @@ function displayGoblins() {
                 } else {
                     alert(`You tried to hit ${goblin.name}, but missed.`);
                 }
+                // Goblin hit attempt
+                if (Math.random() > .40) {
+                    charHP--;
+                    alert(`${goblin.name} hit you!`);
+                } else {
+                    alert(`${goblin.name} tried to hit you, but missed!`);
+                }
+
+                // Check if goblin is dead
+                if (goblin.hp === 0) {
+                    killCount++;
+                }
+
+                // Check if player is dead
+                if (charHP === 0) {
+                    alert('---=== GAME OVER ===---');
+                }
+
+                // Update all changes to DOM
+                characterHPEl.textContent = charHP;
+                deadGoblinsEl.textContent = killCount;
+                displayGoblins();
             });
         }
+        goblinContainerEl.append(goblinEl);
     }
-
 }
 
-
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+displayGoblins();

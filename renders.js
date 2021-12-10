@@ -8,8 +8,8 @@ export function renderGoblin(goblin) {
 
     // Set element text
     name.textContent = goblin.name;
-    hp.textContent = goblin.hp;
-    goblinEmoji.textContent = (goblin.hp > 0) ? '👹' : '💀';
+    hp.textContent = goblin.hitPoints;
+    goblinEmoji.textContent = (goblin.hitPoints > 0) ? '👹' : '💀';
 
     // Add class to container
     container.classList.add('goblin');
