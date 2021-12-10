@@ -112,3 +112,18 @@ main {
 #top-row p {
     display: inline;
 }
+
+.goblin {
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 2em;
+    justify-items: center;
+    align-items: center;
+}
+
+.goblin * {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
