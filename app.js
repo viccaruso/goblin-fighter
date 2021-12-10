@@ -7,7 +7,7 @@ const goblinContainerEl = document.querySelector('#monsters-div');
 const form = document.querySelector('form');
 
 // let state
-let charHP = 3;
+let charHP = 10;
 let killCount = 0;
 const goblinList = [
     {

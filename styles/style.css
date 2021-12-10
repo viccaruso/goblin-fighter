@@ -97,13 +97,18 @@ main {
     align-self: center;
     }
 
+#character-div h1 {
+    display: flex;
+    justify-content: space-between;
+}
+
 #monsters-div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-self: center;
     align-self: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: fit-content;
     width: 60%;    
 }
@@ -118,7 +123,7 @@ main {
     font-size: 2em;
     justify-items: center;
     align-items: center;
-    width: fit-content;
+    margin: 1em;
 }
 
 .goblin * {
@@ -129,5 +134,9 @@ main {
 }
 
 .goblin-face {
+    font-size: 3em;
+}
+
+#dead-goblins {
     font-size: 3em;
 }
