@@ -31,28 +31,6 @@ body {
     background-color: var(--color2);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: calc(var(--footer-height));
-}
-
-section {
-    background-color: var(--color5);
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
-}
-
 header {
     display: flex;
     justify-content: flex-end;
@@ -60,7 +38,6 @@ header {
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
-
 
 h2 {
     font-size: 1.8rem;
@@ -88,4 +65,50 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+}
+
+main {
+    display: grid;
+    grid-template-rows: 200px 5fr 2fr;
+    background-image: url('../assets/background.jpeg');
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    background-repeat: no-repeat;
+}
+
+#top-row {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em 2em 0 2em;
+    color: white;
+}
+#middle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#character-div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    
+    background-color: white;
+}
+
+#monsters-div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    height: 70%;
+    width: 60%;
+    background-color: white;
+    
+}
+
+#top-row p {
+    display: inline;
 }
