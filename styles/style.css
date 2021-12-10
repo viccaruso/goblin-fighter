@@ -87,6 +87,7 @@ main {
 #middle-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    color: white;
 }
 
 #character-div {
@@ -94,19 +95,17 @@ main {
     flex-direction: column;
     justify-self: center;
     align-self: center;
-    
-    background-color: white;
-}
+    }
 
 #monsters-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-self: center;
     align-self: center;
-    height: 70%;
-    width: 60%;
-    background-color: white;
-    
+    justify-content: space-between;
+    height: fit-content;
+    width: 60%;    
 }
 
 #top-row p {
@@ -119,6 +118,7 @@ main {
     font-size: 2em;
     justify-items: center;
     align-items: center;
+    width: fit-content;
 }
 
 .goblin * {
@@ -126,4 +126,8 @@ main {
     flex-direction: column;
     padding: 0;
     margin: 0;
+}
+
+.goblin-face {
+    font-size: 3em;
 }

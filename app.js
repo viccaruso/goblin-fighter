@@ -7,7 +7,7 @@ const goblinContainerEl = document.querySelector('#monsters-div');
 const form = document.querySelector('form');
 
 // let state
-let charHP = 10;
+let charHP = 3;
 let killCount = 0;
 const goblinList = [
     {
@@ -24,7 +24,7 @@ const goblinList = [
     },
 ];
 
-
+updateState();
 // set event listeners 
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // Always
@@ -34,8 +34,9 @@ form.addEventListener('submit', (e) => {
     const goblinName = data.get('goblin-name');
 
     // Create a new goblin using form data
+    // if goblin is unnamed use a random value
     const newGoblin = {
-        name: goblinName,
+        name: (goblinName === '') ? `Goblin #${Math.floor(Math.random() * 5000)}` : goblinName,
         hitPoints : 3
     };
 
@@ -47,7 +48,7 @@ form.addEventListener('submit', (e) => {
 });
 
 function displayGoblins() {
-
+    updateState();
     // Clear all elements from goblin container
     while (goblinContainerEl.firstChild) {
         goblinContainerEl.firstChild.remove();
@@ -59,12 +60,12 @@ function displayGoblins() {
         const goblinEl = renderGoblin(goblin);
 
         // Make goblin element clickable if it is still alive
-        if (goblin.hp > 0) {
+        if (goblin.hitPoints > 0) {
             goblinEl.addEventListener('click', () => {
                 // Player hit attempt
                 // If hit was successful decrement goblin hp
                 if (Math.random() > .45) {
-                    goblin.hp--;
+                    goblin.hitPoints--;
                     alert(`You hit ${goblin.name}!`);
                 } else {
                     alert(`You tried to hit ${goblin.name}, but missed.`);
@@ -78,7 +79,7 @@ function displayGoblins() {
                 }
 
                 // Check if goblin is dead
-                if (goblin.hp === 0) {
+                if (goblin.hitPoints === 0) {
                     killCount++;
                 }
 
@@ -88,8 +89,6 @@ function displayGoblins() {
                 }
 
                 // Update all changes to DOM
-                characterHPEl.textContent = charHP;
-                deadGoblinsEl.textContent = killCount;
                 displayGoblins();
             });
         }
@@ -98,3 +97,8 @@ function displayGoblins() {
 }
 
 displayGoblins();
+
+function updateState() {
+    characterHPEl.textContent = charHP;
+    deadGoblinsEl.textContent = `Killed goblins: ${killCount}`;
+}
